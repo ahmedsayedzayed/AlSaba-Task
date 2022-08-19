@@ -1,0 +1,30 @@
+<div appSideNavWatchHeight style="overflow-y: auto;" style="position: relative; width: 100%;">
+    <div class="" style="border-bottom: thick solid #0d6efd; position: relative; padding: 10px 0px;">
+        <img src="assets/logo-heights.png" style="position: relative; left: 50%; transform: translateX(-50%); width: 60%;">
+    </div>
+    <div style="max-height: calc(100% - 150px); overflow-y: auto;">
+        <mat-nav-list disableRipple="false">
+            <h2 matSubheader>Quick Access</h2>
+            <a 
+                mat-list-item 
+                [routerLink]="'/main/dashboard'" 
+                routerLinkActive="active-link"
+                class="border-bottom"
+                >
+                <mat-icon matListIcon>dashboard</mat-icon> 
+                <span matLine><strong>Dashboard</strong></span>
+            </a>
+            <h2 matSubheader>Tools</h2>
+            <a 
+                mat-list-item 
+                [routerLink]="[link.link]" 
+                routerLinkActive="active-link"
+                *ngFor="let link of links"
+                class="border-bottom"
+                >
+                <mat-icon matListIcon>{{link.icon}}</mat-icon> 
+                <span matLine>{{ link.text }}</span>
+            </a>
+         </mat-nav-list>
+    </div>
+</div>

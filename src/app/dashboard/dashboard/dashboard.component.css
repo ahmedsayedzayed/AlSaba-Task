@@ -1,0 +1,20 @@
+.box {
+  border: 1px solid #ddd;
+  min-height: 120px;
+  text-align: center;
+  line-height: .5;
+  margin-top: 10px;
+}
+
+::ng-deep .mat-form-field-flex {
+  background-color: #ddd !important;
+}
+
+@media (min-width: 599px) {
+  .box:last-of-type {
+    margin-right: 1% !important;
+  }  
+}
+.num {
+  display: inline-block;
+}

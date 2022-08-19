@@ -1,0 +1,15 @@
+<mat-toolbar class="mat-elevation-z4" style=" height: 48px !important;" fxLayout="row" fxLayoutAlign="space-between center">
+    <button 
+        (click)="toggle()" 
+        mat-icon-button 
+        aria-label="Side navigation toggle icon"
+        matTooltip="Toggle side navigation"
+        matTooltipShowDelay="500"
+        >
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div fxFlex="50px"></div>
+    <span fxFlex="grow" class="brand">Elsaba-task</span>
+    <a [routerLink]="['/main/profile']" fxFlex="noshrink" mat-button (click)="null">{{(svcAuth.curUser | async)?.username }}</a>
+    <button mat-icon-button (click)="svcAuth.appLogout()" title="Logout"><mat-icon>logout</mat-icon></button>
+</mat-toolbar>

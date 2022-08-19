@@ -1,0 +1,23 @@
+<div class="d-flex page">
+    <mat-accordion class="w-100">
+        <mat-expansion-panel [expanded]="true">
+
+          <mat-expansion-panel-header style="background-color: steelblue !important;">
+            <mat-panel-title>
+             <h2 class="pt-3" style="color: #fff;">Assign Roles To Menu List</h2>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+      
+         <div class="d-flex flex-column w-100 pt-2">
+            <h3>Choose Role</h3>
+            <mat-form-field class="col-7" appearance="fill" *ngIf="systemRolesObs | async as roles">
+                <mat-label>Select</mat-label>
+                <mat-select (selectionChange)="roleSelectionChange($event)">
+                  <mat-option *ngFor="let role of roles" [value]="role.id">{{role.roleName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+         </div>
+      
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

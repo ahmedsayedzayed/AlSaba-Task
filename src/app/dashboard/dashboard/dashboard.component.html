@@ -1,0 +1,26 @@
+<div style="padding: 15px;">
+   
+
+    <div fxFlex="100%" fxLayoutAlign.gt-xs="end" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="1%">
+
+        <div class="box" fxFlex="65%" fxFlexOrder.xs="2" fxLayoutAlign="center center">
+             <span class="num">1</span>
+        </div>
+
+        <div class="box" fxLayout="column" fxFlex="33%" fxFlexOrder.xs="1" fxLayoutAlign="center center">
+            <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" [(ngModel)]="dateValue">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <div>{{dateValue | date:'dd/MM/YYYY'}}</div>
+        </div>
+
+        <div class="box" fxFlex="33%" fxFlexOrder.xs="3" fxLayoutAlign="center center" fxFlexAlign.gt-xs="end" [style.margin-top]="'12px'">
+            <span class="num">3</span>
+        </div>
+        
+    </div>
+</div>

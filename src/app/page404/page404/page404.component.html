@@ -1,0 +1,15 @@
+<h1>404 Error </h1>
+<!-- <p class="zoom-area"><b>CSS</b> animations to make a cool 404 page. </p> -->
+<section class="error-container">
+  <span>4</span>
+  <span><span class="screen-reader-text">0</span></span>
+  <span>4</span>
+</section>
+<div class="link-container">
+    page not found or You don't have the right permession !
+</div>
+
+<div class="w-100 justify-content-center d-flex mt-2">
+  <button *ngIf="isLoggedIn" [routerLink]="['/main']" mat-raised-button>Home <mat-icon class="mat-18">home</mat-icon></button>
+  <button *ngIf="!isLoggedIn" [routerLink]="['/login']" mat-raised-button>Login <mat-icon class="mat-18">home</mat-icon></button>
+</div>

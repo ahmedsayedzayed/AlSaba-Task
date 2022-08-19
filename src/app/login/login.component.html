@@ -1,0 +1,50 @@
+<div fxLayout="row" fxLayoutAlign="start">
+    <div fxFlex="50%" class="side-banner" fxShow fxHide.lt-md>
+        <p class="slogan">ElSaba-Task</p>
+    </div>
+    <div fxFlex="grow">
+        <div fxLayout="row" fxLayoutAlign="center">
+            <div fxFlex="60%" fxLayout="column" fxLayoutGap="30px">
+                <div fxFlex="30px"></div>
+                <div fxFlex>
+                    <!-- <img src="assets/logo-taba-heights.png" style="width: 200px; position: relative; left: 50%; transform: translateX(-50%);"> -->
+                </div>
+                <div fxFlex>
+                    <p style="text-align: center; color: royalblue; text-transform: uppercase; font-size: 2em; line-height: normal;">Login Form</p>
+                </div>
+            </div>
+        </div>
+        <div fxLayout="column" fxLayoutGap="20px">
+            <div fxFlex fxLayout="row" fxLayoutAlign="center">
+                <div fxFlex="500px" fxFlex.lt-md="90%" style="padding: 10px 10px; border: thin solid lightgray; border-radius: 5px;">
+                    <form [formGroup]="formLogin" fxLayout="column" fxLayoutAlign="start" fxLayoutGap="30px">
+                        <div fxFlex="0px"></div>
+                        <h3 fxFlex class="theme-subtitle">Please provide your login credentials</h3>
+                        <div fxFlex>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Username</mat-label>
+                                <input matInput type="text" formControlName="email" required>
+                                <mat-hint>Required</mat-hint>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Password</mat-label>
+                                <input matInput type="password" formControlName="password" required>
+                                <mat-hint>Required</mat-hint>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex fxFlexAlign="end">
+                            <button  (click)="login()" mat-flat-button color="primary">Login</button>
+                        </div>
+                        <div fxFlex style="border-top: thin solid lightgray;">
+                            <p style="text-align: center; color: royalblue; padding-top: 20px;">
+                                2022, All rights reserved to
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

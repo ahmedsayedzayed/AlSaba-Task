@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpprogressService } from './services/httpprogress.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'AlSaba-Task';
+  title = 'Elsaba-task';
+  constructor( public svcProgress: HttpprogressService) { }
 }

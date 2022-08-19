@@ -1,0 +1,27 @@
+<div style="margin-bottom: 5px;">
+    <app-hnavbar (toggleSideNavEvent)="drawer.toggle()"></app-hnavbar>
+</div>
+
+<div appWatchHeight>
+    <mat-drawer-container autosize style="height: 100%;">
+        
+        <!-- Appears on left side -->
+        <mat-drawer #drawer [opened]="true" [mode]="(isOverSideNav | async) ? 'over' : 'side'" style="width: 250px; overflow-x: hidden;">
+            <app-vnavbar></app-vnavbar>
+            <div style="position: fixed; bottom: 0px; font-size: 0.85em; min-width: 250px;">
+                <p style="margin-bottom: 5px; text-align: center;text-transform: capitalize;"> &copy; All rights reserved</p>
+                <div style="text-align: center;">
+                    <img style="max-height: 50px;" src="assets/SideNav-Logo.png">
+                </div>
+            </div>
+        </mat-drawer>
+
+        <!-- Drawer body, all work goes here -->
+        <div appWatchHeight style=" height: 100%;">
+            <div style="padding: 0px;">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    
+    </mat-drawer-container>
+</div>
