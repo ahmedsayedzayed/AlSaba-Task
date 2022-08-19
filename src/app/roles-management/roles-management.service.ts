@@ -23,7 +23,7 @@ export class RolesManagementService {
     let params = new HttpParams();
     params = params.append('RoleId',`${roleId}`)
     return this.http.get(`${ROLES_ENs.getMenuByRoleId}`, { params: params }).pipe(map((res: any) => res.result)).pipe(
-      tap(res => console.log(res)),
+      // tap(res => console.log(res)),
       map(res => { 
         return this.buildTree(res)
       })
