@@ -1,22 +1,56 @@
 <div class="d-flex page">
     <mat-accordion class="w-100">
         <mat-expansion-panel [expanded]="true">
-
           <mat-expansion-panel-header style="background-color: steelblue !important;">
             <mat-panel-title>
-             <h2 class="pt-3" style="color: #fff;">Assign Roles To Menu List</h2>
+            <h2 class="pt-3" style="color: #fff;">Assign Roles To Menu List</h2>
             </mat-panel-title>
           </mat-expansion-panel-header>
-      
-         <div class="d-flex flex-column w-100 pt-2">
+    
+          <div class="d-flex flex-column w-100 pt-2">
             <h3>Choose Role</h3>
-            <mat-form-field class="col-7" appearance="fill" *ngIf="systemRolesObs | async as roles">
+            <div class="row" *ngIf="systemRolesObs | async as roles">
+              <mat-form-field class="col-7" appearance="fill">
                 <mat-label>Select</mat-label>
                 <mat-select (selectionChange)="roleSelectionChange($event)">
                   <mat-option *ngFor="let role of roles" [value]="role.id">{{role.roleName}}</mat-option>
                 </mat-select>
-            </mat-form-field>
-         </div>
+              </mat-form-field>
+
+              <button class="col-3 ms-auto me-5" style="max-height: 50px;" mat-raised-button color="primary">Save</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <mat-accordion class="col-4 mt-4" *ngFor="let role of treeData">
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <span style="font-weight: bold;">{{role.objectLocalname}}</span>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <mat-accordion *ngFor="let cat of role.children">
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        {{cat.objectLocalname}}
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    <div class="row">
+                      <mat-checkbox *ngFor="let item of cat.children" [checked]="item.roleId != 0 ? true : false">
+                        {{item.objectLocalname}}
+                      </mat-checkbox>
+                    </div>
+                    
+                  
+                  </mat-expansion-panel>
+                </mat-accordion>
+
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
       
         </mat-expansion-panel>
     </mat-accordion>

@@ -37,7 +37,6 @@ export class HttpinterceptorService implements HttpInterceptor {
             filter(f => f instanceof HttpResponse),
             delay(500),
             tap(t => {
-                console.log('called');
                 this.svcProgress.onRequestFinished();
             }, e => {
                 setTimeout(() => {

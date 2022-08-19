@@ -10,7 +10,7 @@ import { RolesManagementService } from '../roles-management.service';
 })
 export class RolesManagementComponent implements OnInit {
   public systemRolesObs: Observable<any> = this.rolesManagementSVC.getSystemRoles();
-
+  public treeData: any[] = [];
   constructor(private rolesManagementSVC: RolesManagementService) {
   }
 
@@ -18,9 +18,8 @@ export class RolesManagementComponent implements OnInit {
   }
 
   public roleSelectionChange(e: MatSelectChange) {
-    console.log(e.value);
     this.rolesManagementSVC.getMenuByRoleId(e.value).subscribe(res => {
-      console.log(res);
+      this.treeData = res;
     });
   }
 
