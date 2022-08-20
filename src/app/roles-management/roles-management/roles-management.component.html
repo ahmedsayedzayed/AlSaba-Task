@@ -21,8 +21,8 @@
             </div>
           </div>
 
-          <div class="row">
-            <mat-accordion class="col-4 mt-4" *ngFor="let role of treeData">
+          <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="2%">
+            <mat-accordion fxFlex="31%" class="mt-4" *ngFor="let role of treeData">
               <mat-expansion-panel>
                 <mat-expansion-panel-header>
                   <mat-panel-title>
